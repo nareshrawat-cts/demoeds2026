@@ -1,0 +1,41 @@
+/* Block: columns-gallery -- image gallery grid
+   Values extracted from source computed styles (WKND "In the Field" section).
+   Source grid: flex, gap 48px, align-items center, 3 equal columns.
+   Source images: aspect-ratio 16/10, object-fit cover, border-radius 20px. */
+
+.columns-gallery > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-gallery > div > div {
+  margin: 0;
+}
+
+/* image cells: picture fills the cell */
+.columns-gallery > div > div picture {
+  display: block;
+}
+
+.columns-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (width >= 900px) {
+  .columns-gallery > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .columns-gallery > div > div {
+    flex: 1;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "doc",
+  "sites": {
+    "demoeds2026": {
+      "previewOrg": "nareshrawat-cts",
+      "previewSite": "demoeds2026",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

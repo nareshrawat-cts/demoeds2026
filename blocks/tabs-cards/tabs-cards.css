@@ -1,0 +1,162 @@
+/* Tab menu */
+.tabs-cards .tab-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 12px 0 0;
+  margin: 0 0 24px;
+  background-color: transparent;
+  overflow-x: auto;
+}
+
+.tabs-cards .tab-menu-link {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 8px 20px 8px 0;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  background-color: transparent;
+  color: rgb(200 194 184);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tabs-cards .tab-menu-link:hover {
+  color: var(--text-color);
+}
+
+.tabs-cards .tab-menu-link.is-active,
+.tabs-cards .tab-menu-link[aria-selected='true'] {
+  color: var(--text-color);
+  border-bottom-color: var(--accent-color);
+  cursor: default;
+}
+
+@media (width >= 900px) {
+  .tabs-cards .tab-menu-link {
+    padding: 8px 32px 8px 0;
+  }
+}
+
+/* Panels (block rows) */
+.tabs-cards .tab-pane {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tabs-cards .tab-pane[aria-hidden='true'] {
+  display: none;
+}
+
+/* Card grid */
+.tabs-cards .grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (width >= 600px) {
+  .tabs-cards .grid-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-cards .grid-layout {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Card */
+.tabs-cards .article-card {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgb(221 216 207);
+  border-radius: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.tabs-cards .article-card:hover {
+  border-color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Image wrapper */
+.tabs-cards .article-card-image {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.tabs-cards .article-card-image picture,
+.tabs-cards .article-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card body */
+.tabs-cards .article-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 24px 16px;
+  background-color: transparent;
+}
+
+/* Category pill */
+.tabs-cards .article-card-body .tag {
+  align-self: flex-start;
+  display: inline-flex;
+  margin: 0;
+  padding: 5px 8px 3px;
+  border: 0;
+  border-radius: 9999px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 10.4px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+/* Title */
+.tabs-cards .article-card-body h3 {
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+/* Description */
+.tabs-cards .article-card-body p {
+  margin: 0;
+  color: var(--muted-text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  line-height: 1.3;
+}

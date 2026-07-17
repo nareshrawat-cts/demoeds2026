@@ -1,0 +1,129 @@
+/* Featured-article block: large image beside a text column
+   (tag pill, H2, description, "Read the Story" button) on a secondary background.
+   Values extracted from wknd-adventures.com computed styles. */
+
+/* --- Layout (mobile-first: stacked) --- */
+.columns-featured > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-featured > div > div {
+  order: 1;
+}
+
+/* image column comes first on mobile */
+.columns-featured > div > .columns-featured-img-col {
+  order: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.columns-featured > div > .columns-featured-img-col img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Text column --- */
+.columns-featured > div > div:not(.columns-featured-img-col) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tag pill (eyebrow) — first paragraph of the text column */
+.columns-featured > div > div:not(.columns-featured-img-col) > p:first-child {
+  align-self: flex-start;
+  margin: 0 0 12px;
+  border-radius: 9999px;
+  padding: 5px 8px 3px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 10.4px;
+  font-weight: 600;
+  line-height: 16.64px;
+  letter-spacing: 0.52px;
+}
+
+/* Heading */
+.columns-featured h2 {
+  margin: 16px 0 12px;
+  font-family: var(--heading-font-family);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: normal;
+  color: var(--text-color);
+}
+
+/* Footer row: divider + right-aligned button.
+   Works whether or not EDS auto-decorates the link into a .button
+   (targets the trailing paragraph holding the CTA link). */
+.columns-featured > div > div:not(.columns-featured-img-col) > p:last-child {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  border-top: 1px solid rgb(221 216 207);
+  padding-top: 12px;
+}
+
+/* Description paragraph (middle paragraphs that are not the pill or the button row) */
+.columns-featured > div > div:not(.columns-featured-img-col) > p:not(:first-child, :last-child, .button-container) {
+  margin: 0 0 16px;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.8px;
+  color: var(--muted-text-color);
+}
+
+/* Button styling — dark pill matching the source (Syncopate label) */
+.columns-featured > div > div:not(.columns-featured-img-col) > p:last-child > a,
+.columns-featured a.button:any-link {
+  display: inline-block;
+  margin: 0;
+  border: 2px solid var(--text-color);
+  border-radius: 9999px;
+  padding: 12px 32px;
+  background-color: var(--text-color);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.98px;
+  text-decoration: none;
+}
+
+.columns-featured > div > div:not(.columns-featured-img-col) > p:last-child > a:hover,
+.columns-featured > div > div:not(.columns-featured-img-col) > p:last-child > a:focus-visible,
+.columns-featured a.button:hover,
+.columns-featured a.button:focus-visible {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* --- Desktop: side-by-side 50/50 --- */
+@media (width >= 900px) {
+  .columns-featured > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .columns-featured > div > div {
+    flex: 1 1 0%;
+    order: unset;
+  }
+
+  .columns-featured > div > .columns-featured-img-col {
+    align-self: stretch;
+  }
+
+  .columns-featured > div > .columns-featured-img-col img {
+    height: 360px;
+  }
+}

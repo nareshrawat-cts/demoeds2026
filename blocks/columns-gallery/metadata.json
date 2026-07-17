@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-gallery",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-07-17T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-adventures.com/index.html",
+    "originPage": "WKND Adventures homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "inverse",
+    "density": "spacious",
+    "purpose": "gallery",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "row of 3 image cells (image-only grid)",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "image galleries with no captions",
+      "photo grids in editorial sections",
+      "multi-image side-by-side layouts"
+    ],
+    "notSuitableFor": [
+      "text-and-image feature callouts",
+      "single featured story layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-17T00:00:00.000Z"
+  }
+}

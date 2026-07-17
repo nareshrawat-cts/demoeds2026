@@ -1,0 +1,40 @@
+{
+  "variantName": "ticker",
+  "baseBlock": "ticker",
+  "version": "1.0.0",
+  "created": "2026-07-17T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-adventures.com/index.html",
+    "originPage": "WKND Adventures homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "ticker",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "list of short keyword labels rendered as a continuous horizontal marquee",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "keyword or category marquee strips",
+      "animated announcement bands",
+      "scrolling tag lists"
+    ],
+    "notSuitableFor": [
+      "long-form content",
+      "interactive components requiring clicks"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-17T00:00:00.000Z"
+  },
+  "custom": true,
+  "note": "No Block Collection base block exists; created from scratch to replicate the source animated marquee."
+}

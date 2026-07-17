@@ -1,0 +1,82 @@
+/*
+ * hero-cta — centered call-to-action banner.
+ * The accent (#e8651a) background is applied by the section
+ * (section-metadata style=accent), so this block only handles the
+ * centered text + button layout. Values extracted from source computed styles.
+ */
+
+.hero-cta {
+  padding: 0;
+  text-align: center;
+}
+
+/* single content cell: constrain readable width and center.
+   Source lays this out inside the 1200px section wrapper; 860px keeps the
+   heading on a single line at desktop while remaining a comfortable measure. */
+.hero-cta > div > div {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hero-cta h1,
+.hero-cta h2,
+.hero-cta h3 {
+  margin: 0 0 12px;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-color);
+}
+
+.hero-cta h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+.hero-cta p {
+  margin: 0 0 16px;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* button row: centered, single row, 16px gap, 24px above */
+.hero-cta .hero-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.hero-cta .hero-cta-buttons a.button:any-link {
+  margin: 0;
+  border: 2px solid var(--text-color);
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-family: var(--heading-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.25;
+}
+
+/* primary button: filled dark */
+.hero-cta .hero-cta-buttons a.button.primary:any-link {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* secondary button: outlined, transparent */
+.hero-cta .hero-cta-buttons a.button.secondary:any-link {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.hero-cta .hero-cta-buttons a.button:hover,
+.hero-cta .hero-cta-buttons a.button:focus-visible {
+  border-color: var(--text-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
