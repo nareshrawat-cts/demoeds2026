@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-featured",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-07-17T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-adventures.com/index.html",
+    "originPage": "WKND Adventures homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "secondary",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns: image | (tag + heading + paragraph + button)",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured article promos",
+      "image-beside-text feature callouts",
+      "single highlighted story with image and CTA"
+    ],
+    "notSuitableFor": [
+      "grids of many repeating cards",
+      "image-only galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-17T00:00:00.000Z"
+  }
+}

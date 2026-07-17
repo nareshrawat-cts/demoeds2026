@@ -1,0 +1,159 @@
+/* Full-width: cancel the section content max-width/padding for this block */
+.hero-fullscreen-container .hero-fullscreen-wrapper {
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+}
+
+/* Block: full-bleed image with centered overlay content */
+.hero-fullscreen.block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 460px;
+  padding: 48px 24px;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Background image fills the block */
+.hero-fullscreen.block > picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+}
+
+.hero-fullscreen.block > picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/* Dark gradient scrim: darker at bottom for text legibility */
+.hero-fullscreen-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    0deg,
+    rgb(0 0 0 / 75%) 0,
+    rgb(0 0 0 / 45%) 40%,
+    rgb(0 0 0 / 25%)
+  );
+}
+
+/* Content column: 1200px band centered in the viewport, text sits above overlay.
+   The readable content is left-aligned within this band and capped at 832px. */
+.hero-fullscreen.block > div {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* Eyebrow pill */
+.hero-fullscreen.block p.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  max-width: 832px;
+  margin: 0 0 16px;
+  padding: 5px 8px 3px;
+  border-radius: 9999px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 10.4px;
+  font-weight: 600;
+  letter-spacing: 0.52px;
+}
+
+/* Heading */
+.hero-fullscreen.block h1 {
+  max-width: 832px;
+  margin: 0 0 24px;
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Lead paragraph */
+.hero-fullscreen.block p {
+  max-width: 832px;
+  margin: 0 0 24px;
+  color: rgb(255 255 255 / 85%);
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Button group */
+.hero-fullscreen-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 832px;
+  margin-top: 24px;
+}
+
+/* Buttons: primary = accent, ghost = outlined white */
+.hero-fullscreen.block a.button:any-link {
+  margin: 0;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  font-family: var(--heading-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.98px;
+}
+
+.hero-fullscreen.block a.button.primary:any-link {
+  border: 2px solid var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.hero-fullscreen.block a.button.primary:hover,
+.hero-fullscreen.block a.button.primary:focus-visible {
+  border-color: #fff;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+.hero-fullscreen.block a.button.ghost:any-link {
+  border: 2px solid rgb(255 255 255 / 50%);
+  background-color: transparent;
+  color: #fff;
+}
+
+.hero-fullscreen.block a.button.ghost:hover,
+.hero-fullscreen.block a.button.ghost:focus-visible {
+  border-color: #fff;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .hero-fullscreen.block {
+    min-height: 585px;
+    padding: 64px 32px;
+  }
+
+  .hero-fullscreen.block h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    letter-spacing: -1.12px;
+  }
+
+  .hero-fullscreen.block p {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}

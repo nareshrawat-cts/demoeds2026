@@ -1,0 +1,38 @@
+{
+  "variantName": "tabs-cards",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-07-17T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-adventures.com/index.html",
+    "originPage": "WKND Adventures homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "each row = tab label | tab content (grid of article cards)",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "browse-by-category interfaces",
+      "tabbed content where each panel holds a card grid",
+      "activity or topic switchers"
+    ],
+    "notSuitableFor": [
+      "simple text tabs",
+      "non-interactive content that should all be visible"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-17T00:00:00.000Z"
+  }
+}

@@ -1,0 +1,62 @@
+/*
+ * Ticker Block — continuous horizontal marquee.
+ * Values extracted from source computed styles (wknd-adventures.com).
+ * Strip: 66px tall, transparent, accent top/bottom hairline borders.
+ * Track: flex, 32px gap, scrolls translateX(0) -> -50% over 40s (linear, infinite).
+ * Content is duplicated in JS so -50% loops seamlessly.
+ */
+
+.ticker {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+  border-top: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  white-space: nowrap;
+}
+
+.ticker .ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: max-content;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.ticker .ticker-item {
+  flex: 0 0 auto;
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+}
+
+.ticker .ticker-sep {
+  flex: 0 0 auto;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--accent-color);
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker .ticker-track {
+    animation: none;
+  }
+
+  .ticker {
+    overflow-x: auto;
+  }
+}

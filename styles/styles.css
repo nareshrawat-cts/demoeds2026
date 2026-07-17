@@ -10,63 +10,52 @@
  * governing permissions and limitations under the License.
  */
 
+@import url('brand.css');
+
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #fff;
+  --light-color: #f0ece4;
+  --dark-color: #0f1a14;
+  --text-color: #0f1a14;
+  --link-color: #0f1a14;
+  --link-hover-color: #e8651a;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: "Instrument Sans", sans-serif;
+  --heading-font-family: "Syncopate", sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 15px;
+  --body-font-size-xs: 14px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xxl: 40px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 22px;
+  --heading-font-size-m: 18px;
+  --heading-font-size-s: 16px;
+  --heading-font-size-xs: 14px;
 
   /* nav height */
-  --nav-height: 64px;
-}
-
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
+  --nav-height: 34px;
 }
 
 @media (width >= 900px) {
   :root {
     /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
+    --body-font-size-m: 16px;
+    --body-font-size-s: 15px;
     --body-font-size-xs: 14px;
 
     /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+    --heading-font-size-xxl: 56px;
+    --heading-font-size-xl: 40px;
+    --heading-font-size-l: 24px;
+    --heading-font-size-m: 20px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;
   }
 }
 
@@ -77,7 +66,7 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: 1.3;
 }
 
 body.appear {
@@ -105,16 +94,29 @@ h4,
 h5,
 h6 {
   margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.3em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-color);
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  letter-spacing: 0.05em;
+}
+
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
@@ -158,6 +160,7 @@ a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -178,17 +181,30 @@ button.button {
   justify-content: center;
   max-width: 100%;
   margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font: inherit;
-  font-weight: 500;
+  border: 2px solid var(--text-color);
+  border-radius: 9999px;
+  padding: 12px 32px;
+  background-color: var(--text-color);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 14px;
+  font-weight: 700;
   line-height: 1.25;
+  letter-spacing: 0.07em;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+a.button:hover,
+a.button:focus-visible,
+button.button:hover,
+button.button:focus-visible {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: #fff;
 }
 
 a.button[aria-disabled="true"],
@@ -208,9 +224,9 @@ a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: #fff;
 }
 
 a.button.primary[aria-disabled="true"],
@@ -235,9 +251,26 @@ a.button.secondary:hover,
 a.button.secondary:focus-visible,
 button.button.secondary:hover,
 button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--light-color);
-  color: var(--dark-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* ghost button — outlined, used on dark/hero backgrounds */
+a.button.ghost,
+button.button.ghost {
+  border-color: rgb(255 255 255 / 50%);
+  background-color: transparent;
+  color: #fff;
+}
+
+a.button.ghost:hover,
+a.button.ghost:focus-visible,
+button.button.ghost:hover,
+button.button.ghost:focus-visible {
+  border-color: #fff;
+  background-color: #fff;
+  color: var(--text-color);
 }
 
 a.button.secondary[aria-disabled="true"],
@@ -297,17 +330,14 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
+  padding: var(--section-padding) 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   margin: auto;
   padding: 0 24px;
-}
-
-main > .section:first-of-type {
-  margin-top: 0;
 }
 
 @media (width >= 900px) {
@@ -316,10 +346,32 @@ main > .section:first-of-type {
   }
 }
 
-/* section metadata */
+/* section variants (mapped from source backgrounds) */
+main .section.secondary {
+  background-color: var(--secondary-color);
+}
+
+main .section.inverse {
+  background-color: var(--inverse-color);
+  color: var(--inverse-text-color);
+}
+
+main .section.inverse h1,
+main .section.inverse h2,
+main .section.inverse h3,
+main .section.inverse h4,
+main .section.inverse h5,
+main .section.inverse h6 {
+  color: var(--inverse-text-color);
+}
+
+main .section.accent {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* legacy light/highlight */
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
 }
